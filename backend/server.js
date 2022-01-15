@@ -1,14 +1,14 @@
 import { GraphQLServer, PubSub } from 'graphql-yoga';
-import * as db from './db';
+import * as db from './db.js';
 // import Message from './resolvers/Message';
-import Mutation from './resolvers/Mutation';
-import Subscription from './resolvers/Subscription';
+import Mutation from './resolvers/Mutation.js';
+import Subscription from './resolvers/Subscription.js';
 // import User from './resolvers/User';
 // import ChatBox from './resolvers/ChatBox';
-import Query from './resolvers/Query';
+import Query from './resolvers/Query.js';
 // import Comment from './resolvers/Comment';
 // import { mongo } from 'mongoose';
-import  { mongo } from "./mongo/mongo"
+import  { mongo } from "./mongo/mongo.js"
 
 let onLineUserArray = [];
 const setonLineUserArray = (newOnLineUserArray)=>{

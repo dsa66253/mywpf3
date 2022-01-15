@@ -14,13 +14,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ProfileProvider } from "./Hooks/useProfile";
 // Create an http link:
+
+const url = new URL("/graphql", window.location.href);
+
+const port = process.env.PORT || 5000;
+// Create an http link:
 const httpLink = new HttpLink({
-  uri: 'http://localhost:5000/',
+  uri: url.href,
 });
 
 // Create a WebSocket link:
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:5000/`,
+  uri: url.href.replace("http", "ws"),
   options: { reconnect: true },
 });
 
