@@ -18,12 +18,14 @@ const Query = {
     },
     async queryAllPosts(parent, {}, { db }, info){
         // get all posts with populated author 
+        console.log("gql receive data queryAllPosts")
         let tmp = await getPosts();
         console.log("queryAllPosts", tmp)
         return tmp;
     },
     async queryUser(parent, {username}, { db }, info){
         // use to queryUser details
+        console.log("gql receive data queryUser")
         let user = checkUser(db, username)
         console.log("after checkUser()")
         if (!user) throw new Error("Missing chatBox name for CreateChatBox");

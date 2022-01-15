@@ -59,6 +59,7 @@ const getChatBox = async (chatBoxName) => {
 const getPosts = async()=>{
     // populate post and return it
     //? return an array and populate it 
+    console.log("utility receive data getPosts()")
     let post = await PostModel.find({}).populate({path:"author"});
     return post;
 }
